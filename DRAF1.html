@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DRAF </title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%231B1633'/%3E%3Cpath d='M19 19H36V28H45V45H19Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--tx:#2b2540;--mu:#6f6a85;--ac:#6a5af9;--ac2:#ff8fa3;--gl:rgba(255,255,255,.58);--bd:rgba(255,255,255,.8);--ln:rgba(90,80,130,.16);--in:rgba(255,255,255,.5);--cv:#f3f6fb;--sh:0 10px 40px rgba(130,110,160,.16);--g1:#ffc2ae;--g2:#c2fafa;--g3:#f4f9c0;--g4:#f9bdf0;--g5:#fdf3ee;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--tx:#ebe8f5;--mu:#a29db8;--ac:#9d8fff;--gl:rgba(26,23,42,.62);--bd:rgba(255,255,255,.1);--ln:rgba(255,255,255,.13);--in:rgba(255,255,255,.06);--cv:#0f1119;--sh:0 10px 40px rgba(0,0,0,.4);--g1:#5a2f3f;--g2:#173d4d;--g3:#3a3d1f;--g4:#47245a;--g5:#14121f;color-scheme:dark}}
+:root[data-theme="dark"]{--tx:#ebe8f5;--mu:#a29db8;--ac:#9d8fff;--gl:rgba(26,23,42,.62);--bd:rgba(255,255,255,.1);--ln:rgba(255,255,255,.13);--in:rgba(255,255,255,.06);--cv:#0f1119;--sh:0 10px 40px rgba(0,0,0,.4);--g1:#5a2f3f;--g2:#173d4d;--g3:#3a3d1f;--g4:#47245a;--g5:#14121f;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;color:var(--tx);font:14px/1.5 "Plus Jakarta Sans",Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh;padding:18px;display:flex;flex-wrap:wrap;gap:18px;
+background:radial-gradient(60% 45% at 52% 28%,var(--g1) 0,transparent 70%),radial-gradient(55% 50% at 22% 72%,var(--g2) 0,transparent 70%),radial-gradient(45% 40% at 78% 55%,var(--g3) 0,transparent 70%),radial-gradient(35% 30% at 5% 98%,var(--g4) 0,transparent 70%),radial-gradient(35% 30% at 100% 0,var(--g2) 0,transparent 70%),var(--g5);background-attachment:fixed}
+.card{background:var(--gl);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);border:1px solid var(--bd);border-radius:20px;padding:16px;box-shadow:var(--sh)}
+aside{width:350px;max-width:100%;flex:none;display:flex;flex-direction:column;gap:14px}
+main{flex:1;min-width:320px;display:flex;flex-direction:column;gap:14px}
+@media(min-width:861px){main{position:sticky;top:18px;align-self:flex-start}}
+@media(max-width:860px){aside{width:100%}main{order:-1;min-width:0}}
+h1{margin:0;display:flex;align-items:center;gap:10px;font-size:32px;font-weight:400;letter-spacing:-.03em;line-height:1;color:var(--tx)}
+h1 .mk{width:34px;height:34px;flex:none;border-radius:8px;background:var(--tx);display:flex;align-items:center;justify-content:center}
+h1 .mk svg{width:14px;height:14px;display:block;fill:var(--g5)}
+h1 .wm{padding-bottom:3px}
+.sub{color:var(--mu);font-size:12px;margin-top:2px}
+h2{margin:0 0 10px;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--mu);text-transform:uppercase}
+.row{display:grid;grid-template-columns:86px 1fr 88px;align-items:center;gap:8px;margin:8px 0}
+.row label{color:var(--mu);font-size:12px;font-weight:500}
+.row input[type=range]{width:100%;accent-color:var(--ac);min-width:0}
+.row output{text-align:right;font-variant-numeric:tabular-nums;font-size:12px;font-weight:600}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--in);color:var(--tx);border:1px solid var(--ln);border-radius:999px;padding:8px 12px;font:600 13px inherit;font-family:inherit;cursor:pointer;transition:.18s}
+button:hover{transform:translateY(-1px);border-color:var(--ac)}
+button.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(106,90,249,.35)}
+button i{width:9px;height:9px;border-radius:50%;display:inline-block;box-shadow:0 0 0 2px rgba(255,255,255,.6)}
+.seg{display:flex;gap:4px;padding:4px;border-radius:999px;background:var(--in);border:1px solid var(--ln)}
+.seg button{border:0;background:transparent}
+.seg button.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;box-shadow:0 3px 10px rgba(106,90,249,.3)}
+.aq{border:1px solid var(--ln);background:var(--in);border-radius:14px;padding:10px 12px;font-size:12px;line-height:1.6;color:var(--mu)}
+.aq b{color:var(--tx);font-size:20px;font-weight:700}
+.aq input{width:70px;background:var(--in);color:var(--tx);border:1px solid var(--ln);border-radius:8px;padding:3px 8px;font:inherit}
+.sp{margin-top:8px}
+a{color:var(--ac);font-weight:600}
+details summary{cursor:pointer;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--mu);text-transform:uppercase}
+.note{font-size:12px;color:var(--mu);margin-top:10px}
+#wrap{position:relative;width:100%;max-width:820px;margin:0 auto}
+canvas#cv{width:100%;aspect-ratio:1;background:var(--cv);border:1px solid var(--ln);border-radius:14px;display:block}
+#hov{position:absolute;left:12px;top:12px;background:var(--gl);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--bd);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600}
+#leg{max-width:820px;width:100%;margin:0 auto}
+#bar,#bar2{height:10px;border-radius:99px}
+.lt{display:flex;justify-content:space-between;font-size:12px;color:var(--mu);margin-top:4px}
+#rs b{font-size:13px}.hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.hd h2{margin:0}button.ic{flex:none;width:34px;height:34px;padding:0;border-radius:50%}.spin svg{animation:sp 1s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}.er{color:#e5484d;font-size:11px}
+</style></head><body>
+<aside>
+<div class="card"><h1><span class="mk"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M0 0H42V22H64V64H0Z"/></svg></span><span class="wm">sempadan</span></h1><div class="sub" style="margin-top:12px"> BSD City, South Tangerang • Area 1,2 × 1,2 km</div></div>
+<div class="card"><div class="hd"><h2>LIVE DATA</h2><button id="rf" class="ic" title="Perbarui sekarang" aria-label="Perbarui sekarang" onclick="live()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></button></div><div class="aq" id="lv">Mengambil data…</div></div>
+<div class="card"><h2>Kualitas udara</h2>
+<div class="aq">Indeks Kualitas Udara : <b id="aqv" style="font-size:20px">129</b><input id="aqi" type="hidden" value="129"><br>Konsentrasi PM2.5 ≈ <b id="pmv">47</b> µg/m³ <span id="cat"></span></div>
+<div class="row"><label for="tr">Emisi Lalin</label><input id="tr" type="range" min="0" max="5" step=".1" value="1.5"><output id="tro"></output></div>
+<div class="note" style="margin-top:4px">AQICN (Fallback: Copernicus CAMS)</div></div>
+<div class="card"><h2>Layer</h2>
+<div class="btns"><button id="m2" class="on"><i style="background:linear-gradient(135deg,#00e400,#ff0000)"></i>PM2.5</button><button id="m1"><i style="background:linear-gradient(135deg,#2a5ad8,#f58a1f)"></i>Kecepatan</button><button id="m3" class="on" title="Arah angin (partikel)"><i style="background:#fff;border:1px solid #aaa"></i>Angin</button></div></div>
+<div class="card"><h2>GSB · garis sempadan bangunan</h2>
+<div class="seg"><button class="g" id="g0" onclick="setG(0)">0 m</button><button class="g" id="g5" onclick="setG(5)">5 m</button><button class="g" id="g10" onclick="setG(10)">10 m</button></div>
+<div class="aq sp">Lebar Koridor: <b id="cw" style="font-size:14px"></b><br>Rerata Konsentrasi Badan Jalan: <b id="mv" style="font-size:14px">–</b> µg/m³ <span id="pg"></span><div id="rs" style="margin-top:6px"></div></div></div>
+<div class="card"><h2>Variabel Simulasi</h2>
+<div class="row"><label for="hh">Ketinggian</label><input id="hh" type="range" min="2" max="180" step="1" value="10"><output id="hho"></output></div>
+<div class="row"><label for="wd">Arah Datang Angin</label><input id="wd" type="range" min="0" max="359" step="1" value="135"><output id="wdo"></output></div>
+<div class="row"><label for="ws">Kecepatan</label><input id="ws" type="range" min="0.5" max="15" step=".1" value="4"><output id="wso"></output></div></div>
+
+</aside>
+<main>
+<div id="wrap" class="card"><canvas id="cv" width="960" height="960"></canvas><div id="hov">arahkan kursor</div></div>
+<div id="leg" class="card"><div id="lgP"><div id="bar"></div><div class="lt"><span>0 µg/m³</span><span>PM2.5 (µg/m³)</span><span>≥150</span></div></div><div id="lgS" style="margin-top:10px"><div id="bar2"></div><div class="lt"><span>0 m/s</span><span>kecepatan angin |V|</span><span id="l1b"></span></div></div></div>
+</main>
+<script>
+const N=240,DX=1200/N,C=4,LOT=34,RD=8,$=id=>document.getElementById(id);
+const S={g:5,custom:false,lp:null,ws:4,wd:135,h:10,bg:47,tr:1.5,pm:true,sp:false,part:true};
+let rs=11;const rnd=()=>(rs=rs*16807%2147483647)/2147483647;
+const hm=new Float32Array(N*N),road=new Float32Array(N*N),solid=new Uint8Array(N*N);
+// ---- denah sintetis + GSB
+const mc=new Uint8Array(N*N),lots=[];let res={0:null,5:null,10:null},fr=0;const SETTLE=360;
+function gen(g){rs=11;hm.fill(0);road.fill(0);mc.fill(0);lots.length=0;
+const W=LOT-2*g,bw=Math.floor((W-4)/2),xs=[],ys=[];let x=16;
+for(let k=0;k<5;k++){xs.push(x);x+=LOT+(k==2?14:RD)}x=19;for(let k=0;k<5;k++){ys.push(x);x+=LOT+RD}
+const inL=new Uint8Array(N*N);
+xs.forEach((X,i)=>ys.forEach((Y,j)=>{for(let a=0;a<LOT;a++)for(let b=0;b<LOT;b++)inL[(Y+b)*N+X+a]=1;lots.push([X,Y]);
+if(i==3&&j==2)return;
+const d=Math.hypot(i-2.5,j-2),base=18+150*Math.exp(-d*d/2.2);
+for(let sx=0;sx<2;sx++)for(let sy=0;sy<2;sy++){const sk=rnd(),hr=rnd();if(sk<.14)continue;
+const H=Math.max(8,base*(.35+hr*.9)),ox=X+g+(sx?W-bw:0),oy=Y+g+(sy?W-bw:0);
+for(let a=0;a<bw;a++)for(let b=0;b<bw;b++)hm[(oy+b)*N+ox+a]=H}}));
+const av=xs[2]+LOT,x0=xs[0]-RD,x1=xs[4]+LOT+RD,y0=ys[0]-RD,y1=ys[4]+LOT+RD;
+for(let i=0;i<N*N;i++)if(!inL[i]){const cx=i%N,cy=(i/N)|0;road[i]=(cx>=av&&cx<av+14)?2:1;if(cx>=x0&&cx<x1&&cy>=y0&&cy<y1)mc[i]=1}}
+function lotLines(){const g=S.g/DX,W=LOT-2*g;bx.lineWidth=1;lots.forEach(([X,Y])=>{bx.setLineDash([]);bx.strokeStyle='rgba(0,0,0,.35)';bx.strokeRect(X*C+.5,Y*C+.5,LOT*C,LOT*C);
+if(g){bx.setLineDash([6,4]);bx.strokeStyle='rgba(255,255,255,.95)';bx.strokeRect((X+g)*C,(Y+g)*C,W*C,W*C)}});bx.setLineDash([])}
+function setG(m){S.g=m;S.custom=false;gen(m/DX);setMask();reset();fr=0;[0,5,10].forEach(v=>$('g'+v).classList.toggle('on',v==m));$('cw').textContent=(RD*DX+2*m)+' m';show()}
+function measure(){let t=0,n=0;for(let i=0;i<N*N;i++)if(mc[i]&&!solid[i]){t+=c[i];n++}if(!n)return;const m=t/n;$('mv').textContent=m.toFixed(1);
+if(!S.custom&&fr>=SETTLE){res[S.g]=m;show()}$('pg').textContent=fr>=SETTLE?'(stabil)':'(menghitung '+Math.round(fr/SETTLE*100)+'%)'}
+function show(){const b=res[0];$('rs').innerHTML=[0,5,10].map(g=>{const v=res[g];let d='';if(v!=null&&b!=null&&g&&b>0){const q=(v-b)/b*100;d=' ('+(q>=0?'+':'')+q.toFixed(1)+'% vs 0 m)'}
+return '<div>GSB '+g+' m: <b>'+(v==null?'–':v.toFixed(1))+'</b>'+d+'</div>'}).join('')}
+function setMask(){for(let i=0;i<N*N;i++)solid[i]=hm[i]>=S.h?1:0;drawB()}
+// ---- solver
+const A=()=>new Float32Array(N*N);let u=A(),v=A(),u0=A(),v0=A(),p=A(),dv=A(),c=A(),c0=A();
+function wind(){const r=S.wd*Math.PI/180;return[-Math.sin(r)*S.ws,Math.cos(r)*S.ws]}
+function reset(){const[wu,wv]=wind();u.fill(wu);v.fill(wv);c.fill(S.bg);p.fill(0)}
+function samp(d,x,y){x=x<0?0:x>N-1.001?N-1.001:x;y=y<0?0:y>N-1.001?N-1.001:y;const i=x|0,j=y|0,fx=x-i,fy=y-j,k=j*N+i;
+return(d[k]*(1-fx)+d[k+1]*fx)*(1-fy)+(d[k+N]*(1-fx)+d[k+N+1]*fx)*fy}
+function adv(d,s,k){for(let y=0;y<N;y++)for(let x=0;x<N;x++){const i=y*N+x;d[i]=samp(s,x-u[i]*k,y-v[i]*k)}}
+function nb(){// isi sel solid dengan rata-rata tetangga fluid (untuk scalar)
+for(let y=1;y<N-1;y++)for(let x=1;x<N-1;x++){const i=y*N+x;if(!solid[i])continue;let s=0,n=0;for(const j of[i-1,i+1,i-N,i+N])if(!solid[j]){s+=c[j];n++}if(n)c[i]=s/n}}
+function step(){const dt=.6,k=dt/DX,[wu,wv]=wind();
+u0.set(u);v0.set(v);
+// advect velocity
+for(let y=0;y<N;y++)for(let x=0;x<N;x++){const i=y*N+x;u[i]=samp(u0,x-u0[i]*k,y-v0[i]*k);v[i]=samp(v0,x-u0[i]*k,y-v0[i]*k)}
+for(let i=0;i<N*N;i++)if(solid[i]){u[i]=0;v[i]=0}
+bc(wu,wv);
+// proyeksi
+for(let y=1;y<N-1;y++)for(let x=1;x<N-1;x++){const i=y*N+x;dv[i]=.5*(u[i+1]-u[i-1]+v[i+N]-v[i-N])}
+for(let it=0;it<30;it++)for(let y=1;y<N-1;y++)for(let x=1;x<N-1;x++){const i=y*N+x;if(solid[i])continue;let s=0,n=0;
+if(!solid[i-1]){s+=p[i-1];n++}if(!solid[i+1]){s+=p[i+1];n++}if(!solid[i-N]){s+=p[i-N];n++}if(!solid[i+N]){s+=p[i+N];n++}
+p[i]=n?(s-dv[i])/n:0}
+for(let y=1;y<N-1;y++)for(let x=1;x<N-1;x++){const i=y*N+x;if(solid[i])continue;const pc=p[i];
+const pl=solid[i-1]?pc:p[i-1],pr=solid[i+1]?pc:p[i+1],pu=solid[i-N]?pc:p[i-N],pd=solid[i+N]?pc:p[i+N];
+u[i]-=.5*(pr-pl);v[i]-=.5*(pd-pu)}
+for(let i=0;i<N*N;i++)if(solid[i]){u[i]=0;v[i]=0}
+bc(wu,wv);
+// PM2.5: adveksi, sumber, difusi
+nb();c0.set(c);adv(c,c0,k);
+for(let i=0;i<N*N;i++){if(road[i]&&!solid[i])c[i]+=S.tr*.6*road[i]*dt;if(c[i]>300)c[i]=300}
+c0.set(c);const kd=.12;
+for(let y=1;y<N-1;y++)for(let x=1;x<N-1;x++){const i=y*N+x;if(solid[i])continue;let s=0,n=0;for(const j of[i-1,i+1,i-N,i+N])if(!solid[j]){s+=c0[j];n++}if(n)c[i]=c0[i]+kd*(s-n*c0[i])}
+for(let y=0;y<N;y++)for(let x=0;x<N;x++){if(x<3||y<3||x>N-4||y>N-4)c[y*N+x]=S.bg}}
+function bc(wu,wv){for(let y=0;y<N;y++)for(let x=0;x<N;x++){if(x<2||y<2||x>N-3||y>N-3){const i=y*N+x;if(!solid[i]){u[i]=wu;v[i]=wv}}}}
+// ---- warna
+const lerp=(a,b,t)=>a+(b-a)*t,hex=h=>[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];
+function lut(st){const L=[];for(let i=0;i<256;i++){const t=i/255*(st.length-1),a=Math.min(st.length-2,t|0),f=t-a,A=hex(st[a]),B=hex(st[a+1]);L.push([0,1,2].map(q=>lerp(A[q],B[q],f)))}return L}
+const spS=['#2b1a7a','#2a5ad8','#18c4d6','#5be36b','#f4e43a','#f58a1f','#d0301c'];
+const pmS=['#00e400','#ffff00','#ff7e00','#ff0000','#8f3f97','#7e0023'],pmV=[0,12,35.5,55.5,150.5,250];
+const LS=lut(spS);const LP=[];for(let i=0;i<256;i++){const val=i/255*150;let a=0;while(a<pmV.length-2&&val>pmV[a+1])a++;const f=Math.min(1,(val-pmV[a])/(pmV[a+1]-pmV[a])),A=hex(pmS[a]),B=hex(pmS[a+1]);LP.push([0,1,2].map(q=>lerp(A[q],B[q],f)))}
+// ---- render
+const cv=$('cv'),ctx=cv.getContext('2d'),fc=document.createElement('canvas');fc.width=fc.height=N;const fx=fc.getContext('2d'),img=fx.createImageData(N,N);
+const bl=document.createElement('canvas');bl.width=bl.height=N*C;const bx=bl.getContext('2d');
+function drawB(){bx.clearRect(0,0,N*C,N*C);lotLines();for(let y=0;y<N;y++)for(let x=0;x<N;x++){const H=hm[y*N+x];if(!H)continue;const o=H*.2,g=Math.round(70+Math.min(H,160)*.9);
+bx.globalAlpha=H>=S.h?1:.28;bx.fillStyle=`rgb(${g*.6|0},${g*.62|0},${g*.7|0})`;bx.fillRect(x*C,y*C+C-o,C,o);
+bx.fillStyle=`rgb(${g},${g+3},${g+10})`;bx.fillRect(x*C,y*C-o,C,C)}bx.globalAlpha=1}
+let vmax=8;
+const fs=document.createElement('canvas');fs.width=fs.height=N;const fsx=fs.getContext('2d'),imS=fsx.createImageData(N,N);
+function paint(){for(let i=0;i<N*N;i++){const q=i*4;if(solid[i]){img.data[q+3]=0;imS.data[q+3]=0;continue}
+if(S.pm){const col=LP[Math.min(255,(c[i]/150*255)|0)];img.data[q]=col[0];img.data[q+1]=col[1];img.data[q+2]=col[2];img.data[q+3]=235}
+if(S.sp){const col=LS[Math.min(255,(Math.hypot(u[i],v[i])/vmax*255)|0)];imS.data[q]=col[0];imS.data[q+1]=col[1];imS.data[q+2]=col[2];imS.data[q+3]=235}}
+fx.putImageData(img,0,0);fsx.putImageData(imS,0,0);vmax=lerp(vmax,Math.max(2,S.ws*1.7),.05)}
+const P=2400,px=new Float32Array(P),py=new Float32Array(P),pa=new Float32Array(P);
+function spawn(i){do{px[i]=Math.random()*N;py[i]=Math.random()*N}while(solid[(py[i]|0)*N+(px[i]|0)]);pa[i]=40+Math.random()*100}
+for(let i=0;i<P;i++)spawn(i);
+function frame(){step();step();paint();fr++;if(fr%10==0)measure();
+ctx.clearRect(0,0,N*C,N*C);ctx.imageSmoothingEnabled=true;if(S.sp)ctx.drawImage(fs,0,0,N*C,N*C);if(S.pm){ctx.globalAlpha=S.sp?.6:1;ctx.drawImage(fc,0,0,N*C,N*C);ctx.globalAlpha=1}
+if(S.part){ctx.strokeStyle='rgba(255,255,255,.75)';ctx.lineWidth=1;ctx.beginPath();
+for(let i=0;i<P;i++){const x=px[i],y=py[i],j=(y|0)*N+(x|0);if(--pa[i]<0||solid[j]||x<0||y<0||x>=N-1||y>=N-1){spawn(i);continue}
+const a=samp(u,x,y),b=samp(v,x,y);px[i]+=a*1.2/DX;py[i]+=b*1.2/DX;
+ctx.moveTo(x*C,y*C);ctx.lineTo(x*C-a*2.5,y*C-b*2.5)}ctx.stroke()}
+ctx.drawImage(bl,0,0);
+requestAnimationFrame(frame)}
+// ---- UI
+const NAMA=['utara','timur laut','timur','tenggara','selatan','barat daya','barat','barat laut'];
+function aqiPm(a){const T=[[0,50,0,9],[51,100,9.1,35.4],[101,150,35.5,55.4],[151,200,55.5,125.4],[201,300,125.5,225.4]];for(const[l,h,cl,ch]of T)if(a<=h)return cl+(a-l)/(h-l||1)*(ch-cl);return 250}
+const KAT=a=>a<=50?'baik':a<=100?'sedang':a<=150?'tidak sehat bagi kelompok sensitif':a<=200?'tidak sehat':'sangat tidak sehat';
+function ui(){S.ws=+$('ws').value;S.wd=+$('wd').value;S.tr=+$('tr').value;const nh=+$('hh').value,a=+$('aqi').value||0;
+S.bg=S.lp!=null?Math.round(S.lp*10)/10:Math.round(aqiPm(a)*10)/10;$('pmv').textContent=Math.round(S.bg);$('aqv').textContent=Math.round(a);$('cat').textContent='('+KAT(a)+')';
+$('wso').textContent=S.ws.toFixed(1)+' m/s';$('wdo').textContent=S.wd+'° '+NAMA[Math.round(S.wd/45)%8];$('tro').textContent=S.tr.toFixed(1)+'×';$('hho').textContent=nh+' m';
+res={0:null,5:null,10:null};fr=0;if(nh!=S.h){S.h=nh;setMask()}legend();show()}
+function legend(){const g=pmV.slice(0,5).map((v,i)=>pmS[i]+' '+(v/150*100)+'%').join(',')+','+pmS[4]+' 100%';
+$('bar').style.background='linear-gradient(90deg,'+g+')';$('bar2').style.background='linear-gradient(90deg,'+spS.join(',')+')';
+$('lgP').style.display=S.pm?'':'none';$('lgS').style.display=S.sp?'':'none';$('l1b').textContent='~'+(S.ws*1.7).toFixed(1)+' m/s'}
+['ws','wd','tr','hh','aqi'].forEach(id=>$(id).addEventListener('input',()=>{if(id=='aqi')S.lp=null;if(id=='hh')applyWind();ui()}));
+
+[['m1','sp'],['m2','pm'],['m3','part']].forEach(([id,k])=>$(id).onclick=()=>{S[k]=!S[k];$(id).classList.toggle('on',S[k]);legend()});
+
+
+cv.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect(),x=((e.clientX-r.left)/r.width*N)|0,y=((e.clientY-r.top)/r.height*N)|0,i=y*N+x;if(i<0||i>=N*N)return;
+$('hov').textContent=hm[i]?'bangunan '+Math.round(hm[i])+' m':'|V| '+Math.hypot(u[i],v[i]).toFixed(1)+' m/s · PM2.5 '+c[i].toFixed(0)+' µg/m³'});
+ui();setG(5);paint();requestAnimationFrame(frame);
+const WAQI_TOKEN='191534d71009dbebff91373008bcad3aaa36e4d8';
+const Q='latitude=-6.2146&longitude=106.8451&timezone=Asia%2FBangkok';
+const getJ=(url,ms=12000)=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),ms);return fetch(url,{signal:c.signal,cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).catch(e=>{throw new Error(e.name=='AbortError'?'timeout':e.message)}).finally(()=>clearTimeout(t))};
+async function getWind(){const er=[];
+try{const a=await getJ('https://api.open-meteo.com/v1/forecast?'+Q+'&current=wind_speed_10m,wind_direction_10m,wind_gusts_10m&hourly=wind_speed_10m,wind_speed_80m,wind_speed_120m,wind_speed_180m,wind_direction_10m,wind_direction_80m,wind_direction_120m,wind_direction_180m&wind_speed_unit=ms&forecast_days=1'),w=a.current;if(!w)throw new Error('data kosong');
+const hr=a.hourly,k=Math.max(0,hr.time.findIndex(t=>t.slice(0,13)==w.time.slice(0,13))),prof=[[10,w.wind_speed_10m,w.wind_direction_10m]];
+[80,120,180].forEach(z=>{const sp=hr['wind_speed_'+z+'m'][k],d=hr['wind_direction_'+z+'m'][k];if(sp!=null&&d!=null)prof.push([z,sp,d])});
+return{ws:w.wind_speed_10m,wd:w.wind_direction_10m,gust:w.wind_gusts_10m,prof,t:w.time.replace('T',' ')+' WIB',src:'Open-Meteo'}}catch(e){er.push('Open-Meteo: '+e.message)}
+try{const a=await getJ('https://wttr.in/-6.2146,106.8451?format=j1'),w=a.current_condition[0];return{prof:[[10,w.windspeedKmph/3.6,+w.winddirDegree]],ws:w.windspeedKmph/3.6,wd:+w.winddirDegree,t:w.localObsDateTime||'',src:'wttr.in (cadangan; '+er[0]+')'}}catch(e){er.push('wttr.in: '+e.message)}
+throw new Error(er.join(' | '))}
+async function getAQ(){const er=[];
+try{const g=await getJ('https://api.waqi.info/feed/geo:-6.2146;106.8451/?token='+WAQI_TOKEN);if(g.status!=='ok')throw new Error(typeof g.data==='string'?g.data:'status '+g.status);
+const d=g.data,pa=Math.round(d.iaqi&&d.iaqi.pm25?d.iaqi.pm25.v:d.aqi);return{aqi:pa,lp:null,txt:'AQI PM2.5 '+pa,src:'AQICN/WAQI · stasiun: '+(d.city&&d.city.name||'?')+' · '+(d.time&&d.time.s||'')+' (waktu stasiun)'}}catch(e){er.push('WAQI: '+e.message)}
+try{const b=await getJ('https://air-quality-api.open-meteo.com/v1/air-quality?'+Q+'&current=pm2_5,us_aqi');return{aqi:Math.round(b.current.us_aqi),lp:b.current.pm2_5,txt:'PM2.5 '+b.current.pm2_5+' µg/m³',src:'Cadangan: Open-Meteo CAMS (model). '+er[0]}}catch(e){er.push('Open-Meteo AQ: '+e.message)}
+throw new Error(er.join(' | '))}
+function applyWind(){const P=S.prof;if(!P)return;const z=+$('hh').value,vec=p=>{const r=p[2]*Math.PI/180;return[-Math.sin(r)*p[1],-Math.cos(r)*p[1]]};let a,b,t,u,v;
+if(z<=P[0][0]){const f=Math.pow(Math.max(z,2)/P[0][0],.25);a=vec(P[0]);u=a[0]*f;v=a[1]*f}
+else if(z>=P[P.length-1][0]){a=vec(P[P.length-1]);u=a[0];v=a[1]}
+else{let i=1;while(P[i][0]<z)i++;t=(z-P[i-1][0])/(P[i][0]-P[i-1][0]);a=vec(P[i-1]);b=vec(P[i]);u=lerp(a[0],b[0],t);v=lerp(a[1],b[1],t)}
+const sp=Math.hypot(u,v),d=(Math.atan2(-u,-v)*180/Math.PI+360)%360;$('ws').value=Math.min(15,Math.max(.5,sp));$('wd').value=Math.round(d)%360}
+let busy=false;
+async function live(){if(busy)return;busy=true;const rf=$('rf');rf.classList.add('spin');
+const[w,q]=await Promise.allSettled([getWind(),getAQ()]),dot=ok=>'<i style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:'+(ok?'#2fbf71':'#e5484d')+'"></i>';let h='';
+if(w.status=='fulfilled'){const x=w.value;S.prof=x.prof||[[10,x.ws,x.wd]];applyWind();h+='<div>'+dot(1)+'Angin: '+(x.src.startsWith('Open')?'Open-Meteo':'wttr.in (cadangan)')+'</div>'}else h+='<div>'+dot(0)+'Angin gagal</div><div class="er">'+w.reason.message+'</div>';
+if(q.status=='fulfilled'){const x=q.value;S.lp=x.lp;$('aqi').value=x.aqi;h+='<div>'+dot(1)+'PM2.5: '+(x.src.startsWith('AQICN')?'AQICN':'Open-Meteo CAMS (cadangan)')+'</div>'}else h+='<div>'+dot(0)+'PM2.5 gagal</div><div class="er">'+q.reason.message+'</div>';
+ui();
+h+='<div style="margin-top:6px">Pembaruan Terakhir '+new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})+'</div>';
+h+='<div style="font-size:0.85em;opacity:0.75">*Sinkronisasi berkala setiap 10 menit</div>';
+if(w.status!='fulfilled'&&q.status!='fulfilled')h+='<div class="er">Jaringan kemungkinan diblokir; memakai nilai bawaan.</div>';
+$('lv').innerHTML=h;rf.classList.remove('spin');busy=false}
+live();setInterval(live,600000);
+
+</script></body></html>
